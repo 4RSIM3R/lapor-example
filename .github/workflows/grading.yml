@@ -10,8 +10,10 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm install
       - run: npm test
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         if: success() || failure()
         with:
           name: test-results
           path: jest-junit.xml
+      - run: find jest-junit.xml
+      # next step, i want to read the jest-junit.xml -> upload it via HTTP
