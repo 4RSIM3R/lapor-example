@@ -1,0 +1,12 @@
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  grading:
+    name: "Grading Test"
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm test
