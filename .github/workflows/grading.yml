@@ -4,9 +4,14 @@ on:
       - "main"
 jobs:
   grading:
-    name: "Grading Test"
+    name: "grading"
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
       - run: npm install
       - run: npm test
+      - uses: actions/upload-artifact@v2
+        if: success() || failure()
+        with:
+          name: test-results
+          path: jest-junit.xml
