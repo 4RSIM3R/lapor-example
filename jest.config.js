@@ -167,7 +167,7 @@ module.exports = {
   // testRegex: [],
 
   // This option allows the use of a custom results processor
-  testResultsProcessor: "jest-json-reporter",
+  // testResultsProcessor: undefined,
 
   // This option allows use of a custom test runner
   // testRunner: "jest-circus/runner",
